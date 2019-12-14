@@ -116,7 +116,7 @@ def train():
         val_dataset = dataio.SceneClassDataset(root_dir=opt.val_root,
                                                max_num_instances=opt.max_num_instances_val,
                                                max_observations_per_instance=opt.max_num_observations_val,
-                                               img_sidelength=opt.img_sidelength,
+                                               img_sidelength=img_sidelengths[0],
                                                samples_per_instance=1)
         collate_fn = val_dataset.collate_fn
         val_dataloader = DataLoader(val_dataset,
